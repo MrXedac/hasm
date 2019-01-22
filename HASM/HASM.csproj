@@ -41,9 +41,16 @@
     <Compile Include="Opcodes\DEC.cs" />
     <Compile Include="Opcodes\ADD.cs" />
     <Compile Include="Opcodes\SUB.cs" />
+    <Compile Include="Opcodes\JMP.cs" />
+    <Compile Include="Opcodes\PUSH.cs" />
+    <Compile Include="Opcodes\POP.cs" />
+    <Compile Include="Structures\Data.cs" />
+    <Compile Include="Structures\DataKind.cs" />
+    <Compile Include="Opcodes\PRT.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Opcodes\" />
+    <Folder Include="Structures\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

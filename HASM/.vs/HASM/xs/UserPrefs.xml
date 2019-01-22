@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{30A7C691-DD0A-4D2C-9215-78BDEFC2E7B7}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Opcodes/PUSH.cs">
+    <Files>
+      <File FileName="Opcode.cs" Line="8" Column="67" />
+      <File FileName="Program.cs" Line="29" Column="49" />
+      <File FileName="Opcodes/JMP.cs" Line="13" Column="99" />
+      <File FileName="Opcodes/PUSH.cs" Line="13" Column="93" />
+      <File FileName="Opcodes/INC.cs" Line="22" Column="1" />
+      <File FileName="Opcodes/POP.cs" Line="13" Column="68" />
+      <File FileName="Opcodes/SUB.cs" Line="16" Column="58" />
+      <File FileName="Structures/Data.cs" Line="30" Column="6" />
+      <File FileName="Structures/DataKind.cs" Line="10" Column="13" />
+      <File FileName="Opcodes/MOV.cs" Line="38" Column="28" />
+      <File FileName="Opcodes/NOP.cs" Line="13" Column="68" />
+      <File FileName="Opcodes/DEC.cs" Line="13" Column="122" />
+      <File FileName="Opcodes/ADD.cs" Line="13" Column="122" />
+      <File FileName="Opcodes/PRT.cs" Line="8" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HASM" expanded="True">
+            <Node name="HASM" expanded="True">
+              <Node name="Opcodes" expanded="True">
+                <Node name="PUSH.cs" selected="True" />
+              </Node>
+              <Node name="Structures" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HASM PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

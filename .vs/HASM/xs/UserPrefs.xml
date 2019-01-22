@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{30A7C691-DD0A-4D2C-9215-78BDEFC2E7B7}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HASM/Opcodes/JMP.cs">
+    <Files>
+      <File FileName="HASM/Opcodes/MOV.cs" Line="31" Column="1" />
+      <File FileName="HASM/Opcodes/NOP.cs" Line="1" Column="1" />
+      <File FileName="HASM/Opcodes/DEC.cs" Line="1" Column="1" />
+      <File FileName="HASM/Opcodes/ADD.cs" Line="1" Column="1" />
+      <File FileName="HASM/Opcodes/INC.cs" Line="1" Column="1" />
+      <File FileName="HASM/Opcode.cs" Line="1" Column="1" />
+      <File FileName="HASM/Program.cs" Line="22" Column="9" />
+      <File FileName="HASM/Opcodes/JMP.cs" Line="26" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HASM" expanded="True">
+            <Node name="HASM" expanded="True">
+              <Node name="Opcodes" expanded="True">
+                <Node name="JMP.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HASM PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
