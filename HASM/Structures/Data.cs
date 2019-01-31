@@ -20,12 +20,15 @@ namespace HASM.Structures
 
         public void Write(BinaryWriter outp)
         {
-            foreach(byte b in data)
+            if (this.kind != DataKind.LABEL)
             {
-                outp.Write((sbyte)b);
+                foreach (byte b in data)
+                {
+                    outp.Write((sbyte)b);
+                }
+                if (this.kind == DataKind.STRING)
+                    outp.Write((sbyte)'\0');
             }
-            if (this.kind == DataKind.STRING)
-                outp.Write((sbyte)'\0');
         }
     }
 }

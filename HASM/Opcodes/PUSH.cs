@@ -10,7 +10,7 @@ namespace HASM.Opcodes
         {
         }
 
-        public override void Parse(String line, BinaryWriter output, int data_seg_start, LinkedList<Structures.Data> data)
+        public override void Parse(String line, BinaryWriter output, int data_seg_start, LinkedList<Structures.Data> data, LinkedList<Structures.ForwardRef> fref)
         {
             string litteral = line.Split(' ')[1];
             int abs = int.Parse(litteral.Substring(2), System.Globalization.NumberStyles.AllowHexSpecifier);

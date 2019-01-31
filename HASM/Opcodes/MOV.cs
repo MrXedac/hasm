@@ -10,7 +10,7 @@ namespace HASM.Opcodes
         {
         }
 
-        public override void Parse(String line, BinaryWriter output, int data_seg_start, LinkedList<Structures.Data> data)
+        public override void Parse(String line, BinaryWriter output, int data_seg_start, LinkedList<Structures.Data> data, LinkedList<Structures.ForwardRef> fref)
         {
             string destReg = line.Split(' ')[1];
             int regNum = int.Parse(destReg.Substring(1));
@@ -44,6 +44,16 @@ namespace HASM.Opcodes
                         failed = false;
                         break;
                     }
+                }
+
+                if (failed)
+                {
+                    /* Forward reference ? */
+                    Console.WriteLine("/!\\ Potential forward reference to " + litteral + " at address " + (output.BaseStream.Position + 1));
+
+                    /* Add forward reference to parse later */
+                    fref.AddLast(new Structures.ForwardRef(litteral, (int)output.BaseStream.Position + 1));
+                    failed = false; /* Do not fail _yet_ */
                 }
             }
             if (failed)

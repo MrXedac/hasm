@@ -13,6 +13,7 @@ namespace HASM
         private static int next_offset = 0;
         private static int data_seg_addr = 0x1000;
         private static LinkedList<string> code;
+        private static LinkedList<Structures.ForwardRef> fref;
 
         private static void InitializeParser()
         {
@@ -27,9 +28,14 @@ namespace HASM
             lexer.Add("PUSH", new Opcodes.PUSH());
             lexer.Add("POP", new Opcodes.POP());
             lexer.Add("PRT", new Opcodes.PRT());
+            lexer.Add("STOP", new Opcodes.STOP());
+            lexer.Add("MOVM", new Opcodes.MOVM());
+            lexer.Add("CMP", new Opcodes.CMP());
+            lexer.Add("JEQ", new Opcodes.JEQ());
 
             data = new LinkedList<Structures.Data>();
             code = new LinkedList<string>();
+            fref = new LinkedList<Structures.ForwardRef>();
         }
 
         private static void ParseData(string l)
@@ -75,6 +81,9 @@ namespace HASM
                     Console.WriteLine("Data segment will be put at address " + addr);
                     data_seg_addr = abs;
                     break;
+                case "label":
+                    code.AddLast(l);
+                    break;
                 default:
                     Console.WriteLine("Unknown data kind " + datakind);
                     break;
@@ -119,11 +128,64 @@ namespace HASM
             foreach (string c in code)
             {
                 string opcode = c.Split(' ')[0].ToUpper();
-                lexer[opcode].Parse(c, outp, data_seg_addr, data);
+
+                /* Check for label */
+                if(opcode == ".LABEL")
+                {
+                    string label = c.Split(' ')[1];
+                    /* This is a label, not an opcode. Parse it and the accurate address */
+                    data.AddLast(new Structures.Data(label, (int)outp.BaseStream.Position, null, Structures.DataKind.LABEL));
+                    // Console.WriteLine("Label " + label + " found at address " + (int)outp.BaseStream.Position);
+                } else lexer[opcode].Parse(c, outp, data_seg_addr, data, fref);
             }
 
+            /* Let's keep the current position */
             long pos = outp.BaseStream.Position;
             long padsize = data_seg_addr - pos;
+
+            /* Now before we do some padding and write data, let's resolve forward references */
+            foreach(Structures.ForwardRef f in fref)
+            {
+                bool found = false;
+                foreach(Structures.Data d in data)
+                {
+                    if(d.identifier == f.identifier)
+                    {
+                        /* 
+                           Found ref! 
+                           Position our writer at the corresponding location and write address
+                        */
+                        outp.Seek(f.offset, SeekOrigin.Begin);
+                        if(d.kind == Structures.DataKind.LABEL)
+                        {
+                            outp.Write((sbyte)((d.offset >> 24) & 0xFF));
+                            outp.Write((sbyte)((d.offset >> 16) & 0xFF));
+                            outp.Write((sbyte)((d.offset >> 8) & 0xFF));
+                            outp.Write((sbyte)((d.offset) & 0xFF));
+                        }
+                        else
+                        {
+                            int addr = d.offset + data_seg_addr;
+
+                            outp.Write((sbyte)((addr >> 24) & 0xFF));
+                            outp.Write((sbyte)((addr >> 16) & 0xFF));
+                            outp.Write((sbyte)((addr >> 8) & 0xFF));
+                            outp.Write((sbyte)((addr) & 0xFF));
+                        }
+                        Console.WriteLine("/~\\ Resolved forward reference to " + f.identifier + ", at address " + d.offset);
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Console.WriteLine("Couldn't resolve reference to " + f.identifier + ". Exiting.");
+                    Environment.Exit(-1);
+                }
+                found = false;
+            }
+
+            outp.Seek((int)pos, SeekOrigin.Begin);
 
             /* Pad */
             for (long i = 0; i < padsize; i++)

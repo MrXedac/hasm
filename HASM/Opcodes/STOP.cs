@@ -4,15 +4,15 @@ using System.IO;
 
 namespace HASM.Opcodes
 {
-    public class NOP : Opcode
+    public class STOP : Opcode
     {
-        public NOP()
+        public STOP()
         {
         }
 
         public override void Parse(string line, BinaryWriter output, int data_seg_start, LinkedList<Structures.Data> data, LinkedList<Structures.ForwardRef> fref)
         {
-            output.Write((sbyte)0x0);
+            output.Write((sbyte)0xB);
         }
     }
 }

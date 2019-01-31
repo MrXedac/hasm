@@ -47,6 +47,11 @@
     <Compile Include="Structures\Data.cs" />
     <Compile Include="Structures\DataKind.cs" />
     <Compile Include="Opcodes\PRT.cs" />
+    <Compile Include="Opcodes\STOP.cs" />
+    <Compile Include="Opcodes\MOVM.cs" />
+    <Compile Include="Opcodes\CMP.cs" />
+    <Compile Include="Opcodes\JEQ.cs" />
+    <Compile Include="Structures\ForwardRef.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Opcodes\" />

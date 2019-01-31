@@ -4,26 +4,31 @@ using System.IO;
 
 namespace HASM.Opcodes
 {
-    public class JMP : Opcode
+    public class MOVM : Opcode
     {
-        public JMP()
+        public MOVM()
         {
         }
 
         public override void Parse(String line, BinaryWriter output, int data_seg_start, LinkedList<Structures.Data> data, LinkedList<Structures.ForwardRef> fref)
         {
-            bool failed = true;
-            string litteral = line.Split(' ')[1];
+            string destReg = line.Split(' ')[1];
+            int regNum = int.Parse(destReg.Substring(1));
+            string litteral = line.Split(' ')[2];
             int p1 = 0, p2 = 0, p3 = 0, p4 = 0;
+            bool failed = true;
             try
             {
+                /* Absolute litteral */
                 int abs = int.Parse(litteral.Substring(2), System.Globalization.NumberStyles.AllowHexSpecifier);
+
                 p1 = (abs >> 24) & 0xFF;
                 p2 = (abs >> 16) & 0xFF;
                 p3 = (abs >> 8) & 0xFF;
                 p4 = abs & 0xFF;
-
-            } catch (Exception)
+                failed = false;
+            }
+            catch (Exception)
             {
                 /* Couldn't parse litteral - maybe it's an identifier ? */
                 foreach (Structures.Data d in data)
@@ -31,7 +36,7 @@ namespace HASM.Opcodes
                     if (d.identifier.Equals(litteral))
                     {
                         // Console.WriteLine("It's an identifier at offset " + (d.offset + data_seg_start));
-                        int offset = d.offset;
+                        int offset = d.offset + data_seg_start;
                         p1 = (offset >> 24) & 0xFF;
                         p2 = (offset >> 16) & 0xFF;
                         p3 = (offset >> 8) & 0xFF;
@@ -58,7 +63,8 @@ namespace HASM.Opcodes
             }
             else
             {
-                output.Write((sbyte)0x4);
+                output.Write((sbyte)0xC);
+                output.Write((sbyte)regNum);
                 output.Write((sbyte)p1);
                 output.Write((sbyte)p2);
                 output.Write((sbyte)p3);

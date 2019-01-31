@@ -4,9 +4,9 @@ using System.IO;
 
 namespace HASM.Opcodes
 {
-    public class ADD : Opcode
+    public class CMP : Opcode
     {
-        public ADD()
+        public CMP()
         {
         }
 
@@ -16,7 +16,7 @@ namespace HASM.Opcodes
             int regNum = int.Parse(destReg.Substring(1));
             string srcReg = line.Split(' ')[2];
             int srcNum = int.Parse(srcReg.Substring(1));
-            output.Write((sbyte)0x6);
+            output.Write((sbyte)0xD);
             output.Write((sbyte)regNum);
             output.Write((sbyte)srcNum);
         }

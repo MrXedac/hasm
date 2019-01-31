@@ -4,9 +4,9 @@ using System.IO;
 
 namespace HASM.Opcodes
 {
-    public class JMP : Opcode
+    public class JEQ : Opcode
     {
-        public JMP()
+        public JEQ()
         {
         }
 
@@ -22,8 +22,9 @@ namespace HASM.Opcodes
                 p2 = (abs >> 16) & 0xFF;
                 p3 = (abs >> 8) & 0xFF;
                 p4 = abs & 0xFF;
-
-            } catch (Exception)
+                failed = false;
+            }
+            catch (Exception)
             {
                 /* Couldn't parse litteral - maybe it's an identifier ? */
                 foreach (Structures.Data d in data)
@@ -58,7 +59,7 @@ namespace HASM.Opcodes
             }
             else
             {
-                output.Write((sbyte)0x4);
+                output.Write((sbyte)0xE);
                 output.Write((sbyte)p1);
                 output.Write((sbyte)p2);
                 output.Write((sbyte)p3);

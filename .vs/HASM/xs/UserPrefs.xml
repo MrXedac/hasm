@@ -1,14 +1,25 @@
 ﻿<Properties StartupConfiguration="{30A7C691-DD0A-4D2C-9215-78BDEFC2E7B7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="HASM/Opcodes/JMP.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HASM/Opcodes/SUB.cs">
     <Files>
-      <File FileName="HASM/Opcodes/MOV.cs" Line="31" Column="1" />
-      <File FileName="HASM/Opcodes/NOP.cs" Line="1" Column="1" />
-      <File FileName="HASM/Opcodes/DEC.cs" Line="1" Column="1" />
-      <File FileName="HASM/Opcodes/ADD.cs" Line="1" Column="1" />
-      <File FileName="HASM/Opcodes/INC.cs" Line="1" Column="1" />
-      <File FileName="HASM/Opcode.cs" Line="1" Column="1" />
-      <File FileName="HASM/Program.cs" Line="22" Column="9" />
-      <File FileName="HASM/Opcodes/JMP.cs" Line="26" Column="10" />
+      <File FileName="HASM/Opcodes/MOV.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/NOP.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/DEC.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/ADD.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/INC.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcode.cs" Line="10" Column="121" />
+      <File FileName="HASM/Program.cs" Line="137" Column="65" />
+      <File FileName="HASM/Opcodes/JMP.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/STOP.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/MOVM.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/SUB.cs" Line="13" Column="162" />
+      <File FileName="HASM/Structures/Data.cs" Line="35" Column="1" />
+      <File FileName="HASM/Structures/DataKind.cs" Line="11" Column="15" />
+      <File FileName="HASM/Opcodes/CMP.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/JEQ.cs" Line="13" Column="122" />
+      <File FileName="HASM/Structures/ForwardRef.cs" Line="32" Column="10" />
+      <File FileName="HASM/Opcodes/POP.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/PRT.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/PUSH.cs" Line="13" Column="162" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,8 +27,9 @@
           <Node name="HASM" expanded="True">
             <Node name="HASM" expanded="True">
               <Node name="Opcodes" expanded="True">
-                <Node name="JMP.cs" selected="True" />
+                <Node name="SUB.cs" selected="True" />
               </Node>
+              <Node name="Structures" expanded="True" />
             </Node>
           </Node>
         </State>

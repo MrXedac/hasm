@@ -8,5 +8,6 @@ namespace HASM.Structures
         INT16,
         INT32,
         RAW,
+        LABEL,
     }
 }
