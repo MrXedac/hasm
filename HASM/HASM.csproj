@@ -52,6 +52,8 @@
     <Compile Include="Opcodes\CMP.cs" />
     <Compile Include="Opcodes\JEQ.cs" />
     <Compile Include="Structures\ForwardRef.cs" />
+    <Compile Include="Opcodes\MOVR.cs" />
+    <Compile Include="Opcodes\MOVMR.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Opcodes\" />

@@ -1,35 +1,36 @@
 ﻿<Properties StartupConfiguration="{30A7C691-DD0A-4D2C-9215-78BDEFC2E7B7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="HASM/Opcodes/SUB.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HASM/Program.cs">
     <Files>
-      <File FileName="HASM/Opcodes/MOV.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/MOV.cs" Line="52" Column="45" />
       <File FileName="HASM/Opcodes/NOP.cs" Line="13" Column="162" />
       <File FileName="HASM/Opcodes/DEC.cs" Line="13" Column="162" />
-      <File FileName="HASM/Opcodes/ADD.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/ADD.cs" Line="25" Column="1" />
       <File FileName="HASM/Opcodes/INC.cs" Line="13" Column="162" />
       <File FileName="HASM/Opcode.cs" Line="10" Column="121" />
-      <File FileName="HASM/Program.cs" Line="137" Column="65" />
-      <File FileName="HASM/Opcodes/JMP.cs" Line="13" Column="162" />
+      <File FileName="HASM/Program.cs" Line="34" Column="49" />
+      <File FileName="HASM/Opcodes/JMP.cs" Line="47" Column="45" />
       <File FileName="HASM/Opcodes/STOP.cs" Line="13" Column="162" />
-      <File FileName="HASM/Opcodes/MOVM.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/MOVM.cs" Line="52" Column="45" />
       <File FileName="HASM/Opcodes/SUB.cs" Line="13" Column="162" />
-      <File FileName="HASM/Structures/Data.cs" Line="35" Column="1" />
+      <File FileName="HASM/Structures/Data.cs" Line="16" Column="30" />
       <File FileName="HASM/Structures/DataKind.cs" Line="11" Column="15" />
       <File FileName="HASM/Opcodes/CMP.cs" Line="13" Column="162" />
-      <File FileName="HASM/Opcodes/JEQ.cs" Line="13" Column="122" />
-      <File FileName="HASM/Structures/ForwardRef.cs" Line="32" Column="10" />
+      <File FileName="HASM/Opcodes/JEQ.cs" Line="57" Column="35" />
+      <File FileName="HASM/Structures/ForwardRef.cs" Line="12" Column="10" />
       <File FileName="HASM/Opcodes/POP.cs" Line="13" Column="162" />
       <File FileName="HASM/Opcodes/PRT.cs" Line="13" Column="162" />
       <File FileName="HASM/Opcodes/PUSH.cs" Line="13" Column="162" />
+      <File FileName="HASM/Opcodes/MOVR.cs" Line="25" Column="1" />
+      <File FileName="HASM/Opcodes/MOVMR.cs" Line="19" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HASM" expanded="True">
             <Node name="HASM" expanded="True">
-              <Node name="Opcodes" expanded="True">
-                <Node name="SUB.cs" selected="True" />
-              </Node>
+              <Node name="Opcodes" expanded="True" />
               <Node name="Structures" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
