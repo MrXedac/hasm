@@ -54,6 +54,8 @@
     <Compile Include="Structures\ForwardRef.cs" />
     <Compile Include="Opcodes\MOVR.cs" />
     <Compile Include="Opcodes\MOVMR.cs" />
+    <Compile Include="Opcodes\CALL.cs" />
+    <Compile Include="Opcodes\RET.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Opcodes\" />

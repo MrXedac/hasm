@@ -34,6 +34,9 @@ namespace HASM
             lexer.Add("JEQ", new Opcodes.JEQ());
             lexer.Add("MOVR", new Opcodes.MOVR());
             lexer.Add("MOVMR", new Opcodes.MOVMR());
+            lexer.Add("CALL", new Opcodes.CALL());
+            lexer.Add("RET", new Opcodes.RET());
+
 
             data = new LinkedList<Structures.Data>();
             code = new LinkedList<string>();
